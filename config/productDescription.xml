@@ -7,10 +7,9 @@
 	</listeners>
 
 	<test name="Dollar Days Test">
-
+				
 		<classes>
-			<class
-				name="com.dollardays.testcases.Team9_ProductDescriptionPageTestCases" />
+			 <class name="com.dollardays.testcases.productDescriptionTestcase" />
 		</classes>
 	</test> <!-- Test -->
 </suite> <!-- Suite -->

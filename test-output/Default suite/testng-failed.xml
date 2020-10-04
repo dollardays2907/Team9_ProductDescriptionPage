@@ -3,14 +3,15 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.dollardays.testcases.Team7DDSearchBarTestCase">
+      <class name="com.dollardays.testcases.Team9_ProductDescriptionPageTestCases">
         <methods>
-          <include name="SearchWithInvalidDta" invocation-numbers="0"/>
-          <include name="SearchWithProductname" invocation-numbers="0 1 2"/>
+          <include name="TC_DD_PDP_ProductDetails_Cases" invocation-numbers="0 1 2 3 4 5 6 7 8"/>
+          <include name="afterClass"/>
           <include name="quit"/>
+          <include name="beforeClass"/>
           <include name="setUpBrowser"/>
         </methods>
-      </class> <!-- com.dollardays.testcases.Team7DDSearchBarTestCase -->
+      </class> <!-- com.dollardays.testcases.Team9_ProductDescriptionPageTestCases -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

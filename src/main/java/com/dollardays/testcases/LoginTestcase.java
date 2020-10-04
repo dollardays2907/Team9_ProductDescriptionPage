@@ -17,27 +17,26 @@ import com.dollardays.utilities.VideoRecorder_utlity;
 
 public class LoginTestcase extends BaseTest{
 
-	@DDDataProvider(datafile = "testdata/Team7TestData.xlsx", sheetName = "SearchBar",  testcaseID = "TC1", runmode = "Yes")
+	@DDDataProvider(datafile = "testdata/testdata1.xlsx", sheetName = "Sheet1",  testcaseID = "TC1", runmode = "Yes")
 	@Test(dataProvider = "dd-dataprovider", dataProviderClass = TestUtil.class)
 	public void invokeLogin(Hashtable<String, String> datatable) throws Exception{
 		VideoRecorder_utlity.startRecord("GoogleTestRecording");//Starting point of video recording
 		ExtentTestManager.getTest().log(Status.INFO, "login tstcase");
 		Thread.sleep(1000);
 		LoginPage loginPage = new LoginPage(driver);
-		loginPage.login(datatable.get("UserName"), Base64.decrypt(datatable.get("Password")));		
+		loginPage.login(datatable.get("UserName"), Base64.decrypt(datatable.get("Password")));
 		VideoRecorder_utlity.stopRecord();//End point of video recording
-		
 	}
 	
-	/* @DDDataProvider(datafile = "testdata/testdata.json", runmode = "", sheetName = "", testcaseID = "")
-	@Test(dataProvider = "dd-dataprovider", dataProviderClass = JsonReader.class)
-	public void invokeLogin1(Map<String, String> datatable) throws Exception{
-		System.out.println("====>"+ datatable);
-		System.out.println("Username====>"+ datatable.get("usernme"));
-		
-		System.out.println("Password====>"+ Base64.decrypt(datatable.get("password")));
-		
-	}*/
+//	@DDDataProvider(datafile = "testdata/testdata.json", runmode = "", sheetName = "", testcaseID = "")
+//	@Test(dataProvider = "dd-dataprovider", dataProviderClass = JsonReader.class)
+//	public void invokeLogin1(Map<String, String> datatable) throws Exception{
+//		System.out.println("====>"+ datatable);
+//		System.out.println("Username====>"+ datatable.get("usernme"));
+//		
+//		System.out.println("Password====>"+ Base64.decrypt(datatable.get("password")));
+//		
+//	}
 	
 }
 

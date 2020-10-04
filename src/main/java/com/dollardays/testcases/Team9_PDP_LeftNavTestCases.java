@@ -13,27 +13,27 @@ import com.dollardays.pages.Team9_ProductDescriptionPage;
 import com.dollardays.utilities.DDDataProvider;
 import com.dollardays.utilities.TestUtil;
 
-public class Team9_ProductDescriptionPageTestCases extends BaseTest {
-
+public class Team9_PDP_LeftNavTestCases extends BaseTest {
+	
 		
 	/**
-	 * This function runs all the Product description test cases.
+	 * This function runs all the Left Navigation test cases.
+	 * 
 	 * @param datatable
 	 * @throws Exception
 	 */
-	@DDDataProvider(datafile = "testdata/Team9_ProductDescriptionPage.xlsx", sheetName = "Product Details", testcaseID = "", runmode = "")
+	@DDDataProvider(datafile = "testdata/Team9_ProductDescriptionPage.xlsx", sheetName = "Left Navigation", testcaseID = "", runmode = "")
 	@Test(groups = { "lsn-test-one" }, dataProvider = "dd-dataprovider", dataProviderClass = TestUtil.class)
-	public void TC_DD_PDP_ProductDetails_Cases(Hashtable<String, String> datatable) throws Exception {
-
+	public void TC_DD_PDP_LeftNavigation_Cases(Hashtable<String, String> datatable) throws Exception {
+		
 		Thread.sleep(500);
 		ExtentTestManager.getTest().log(Status.PASS, datatable.get("TCID") + ": " + datatable.get("TestCase"));
 		runPreConditions(datatable);
-		Thread.sleep(500);
-		
+
 		Team9_ProductDescriptionPage pdp_page = new Team9_ProductDescriptionPage(driver);
-		ExtentTestManager.getTest().log(Status.INFO, "Step 1: Verify " + datatable.get("Verify Value"));
-		pdp_page.VerifyValue(datatable.get("Verify Value"));
-		Thread.sleep(1000);
+		Thread.sleep(500);
+		ExtentTestManager.getTest().log(Status.INFO, "Step 1: Click " + datatable.get("Action Type"));
+		pdp_page.clickActionType(datatable.get("Action Type"));
 	}
 
 }
